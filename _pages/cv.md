@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+{% assign sorted_publications = site.publications | sort: "year" | reverse %}
+
 First-year PhD candidate at HKUST NLP Group. Research focuses on natural language processing and machine learning.
 
 Education
@@ -32,7 +34,7 @@ Skills
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
+  <ul>{% for post in sorted_publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
